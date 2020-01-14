@@ -1,6 +1,7 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'directors_database'
 require 'pp'
+require 'pry' 
 
 def directors_totals(nds)
   director_index = 0 
