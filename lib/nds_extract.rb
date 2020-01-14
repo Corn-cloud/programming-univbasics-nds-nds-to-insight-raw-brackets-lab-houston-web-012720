@@ -1,7 +1,22 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'directors_database'
+require 'pp'
 
 def directors_totals(nds)
+  director_index = 0 
+  totals = {}
+  
+  while director_index < nds.length do 
+   director_name = nds[director_index][:name]
+   totals[director_name] = 0 
+   movie_index = 0 
+  while movie_index < nds[director_index][:movie].length do 
+    totals[director_name] += nds[director_index][:movie][movie_index]
+   movie_index += 1 
+ end 
+   director_index += 1
+ end
+ totals 
   # Remember, it's always OK to pretty print what you get *in* to make sure
   # that you know what you're starting with!
   #
